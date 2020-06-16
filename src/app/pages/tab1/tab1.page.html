@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-capitalize">Javier's news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <!-- "noticias" son las noticias que estamos leyendo en el ngOnInit del tab1.pages.ts -->
+  <!-- "[noticias] son las que pedimos que nos manden desde noticias.components.ts -->
+  <app-noticias [noticias]="noticias"></app-noticias>
+
+  <ion-infinite-scroll  threshold="150px"
+                        (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content  loadingSpinner="crescent"
+                                  loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+</ion-content>
